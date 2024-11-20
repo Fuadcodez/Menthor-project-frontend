@@ -9,7 +9,7 @@ export default function Home() {
       </div>
 
       {/* Desktop design */}
-      <div className='hidden md:block'>
+      <div className='hidden md:block text-white'>
         <DesktopDesign />
       </div>
     </>
