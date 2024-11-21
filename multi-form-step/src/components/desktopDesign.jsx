@@ -56,9 +56,9 @@ export default function DesktopDesign() {
   }, [error1, error2, error3]);
   return (
     <div className=' bg-[hsl(206,94%,87%)] min-h-full h-[100vh] w-full flex justify-center items-center'>
-      <div className='bg-white flex p-4 w-[700px] h-[550px] rounded-lg '>
+      <div className='bg-white flex p-4 w-[800px] h-[550px] rounded-lg '>
         <section
-          className='h-full rounded-lg flex pl-5  w-[40%] bg-no-repeat background'
+          className='h-full rounded-lg flex pl-5  w-[30%] bg-no-repeat background'
         >
           <div className='flex gap-4 mb-8 flex-col pt-8 '>
             <div className='flex items-center gap-4'>
@@ -127,9 +127,9 @@ export default function DesktopDesign() {
             </div>
           </div>
         </section>
-        <section className='w-[60%] flex justify-center h-full'>
+        <section className='w-[70%] px-16 h-full'>
           {number === 0 && (
-            <form className='flex flex-col justify-between'>
+            <form className='flex flex-col justify-between h-full'>
               <div className='bg-white rounded-lg px-7 py-9 flex flex-col gap-3 justify-center'>
                 <h1
                   className='text-2xl font-bold'
@@ -364,7 +364,7 @@ export default function DesktopDesign() {
             </div>
           )}
           {number === 2 && (
-            <div className='flex flex-col justify-between'>
+            <div className='flex flex-col justify-between h-full'>
               <div className='bg-white rounded-lg px-7 py-9 flex flex-col gap-7 justify-center'>
                 <div className='flex flex-col gap-1'>
                   <h1
@@ -458,7 +458,7 @@ export default function DesktopDesign() {
             </div>
           )}
           {number === 3 && (
-            <div className='flex flex-col justify-between'>
+            <div className='flex flex-col justify-between h-full'>
               <div className='bg-white rounded-lg px-7 py-9 flex flex-col gap-5 justify-center'>
                 <div className='flex gap-1 flex-col'>
                   <h1
