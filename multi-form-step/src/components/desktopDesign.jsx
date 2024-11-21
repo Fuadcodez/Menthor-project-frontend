@@ -56,7 +56,7 @@ export default function DesktopDesign() {
   }, [error1, error2, error3]);
   return (
     <div className=' bg-[hsl(206,94%,87%)] min-h-full h-[100vh] w-full flex justify-center items-center'>
-      <div className='bg-white flex p-4 w-[700px] h-[500px] rounded-lg '>
+      <div className='bg-white flex p-4 w-[700px] h-[550px] rounded-lg '>
         <section
           className='h-full rounded-lg flex pl-5  w-[40%] bg-no-repeat background'
         >
@@ -127,7 +127,7 @@ export default function DesktopDesign() {
             </div>
           </div>
         </section>
-        <section className='w-[60%] flex justify-center'>
+        <section className='w-[60%] flex justify-center h-full'>
           {number === 0 && (
             <form className='flex flex-col justify-between'>
               <div className='bg-white rounded-lg px-7 py-9 flex flex-col gap-3 justify-center'>
@@ -218,7 +218,7 @@ export default function DesktopDesign() {
                   </div>
                 </div>
               </div>
-              <footer
+              <div
                 className={`bg-white min-h-[10vh] flex ${
                   number === 0 ? 'justify-end' : 'justify-between'
                 } items-center py-3 px-5`}
@@ -229,12 +229,12 @@ export default function DesktopDesign() {
                 >
                   Next Step
                 </button>
-              </footer>
+              </div>
             </form>
           )}
           {number === 1 && (
-            <div className='flex flex-col justify-between'>
-              <div className='bg-white rounded-lg px-7 py-9 flex flex-col gap-8 justify-center'>
+            <div className='flex flex-col justify-between h-full'>
+              <div className='rounded-lg px-7 py-9 flex flex-col gap-8 justify-center'>
                 <div className='flex flex-col gap-2'>
                   <h1
                     className='text-2xl font-bold'
@@ -345,8 +345,8 @@ export default function DesktopDesign() {
                   </div>
                 </div>
               </div>
-              <footer
-                className={`bg-white min-h-[10vh] flex justify-between items-center py-3 px-5`}
+              <div
+                className={` flex justify-between items-center py-3 px-5`}
               >
                 <button
                   className='px-4 py-2 text-[hsl(229,24%,87%)]  text-md font-semibold'
@@ -360,7 +360,7 @@ export default function DesktopDesign() {
                 >
                   Next Step
                 </button>
-              </footer>
+              </div>
             </div>
           )}
           {number === 2 && (
@@ -439,7 +439,7 @@ export default function DesktopDesign() {
                   </div>
                 </div>
               </div>
-              <footer
+              <div
                 className={`bg-white min-h-[10vh] flex justify-between items-center py-3 px-5`}
               >
                 <button
@@ -454,7 +454,7 @@ export default function DesktopDesign() {
                 >
                   Next Step
                 </button>
-              </footer>
+              </div>
             </div>
           )}
           {number === 3 && (
@@ -514,7 +514,7 @@ export default function DesktopDesign() {
                   </p>
                 </div>
               </div>
-              <footer
+              <div
                 className={`bg-white min-h-[10vh] flex justify-between items-center py-3 px-5`}
               >
                 <button
@@ -529,7 +529,7 @@ export default function DesktopDesign() {
                 >
                   Confirm
                 </button>
-              </footer>
+              </div>
             </div>
           )}
           {number === 'confirm' && (
