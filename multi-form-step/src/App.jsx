@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import MobileDesign from './components/mobileDesign'
 import DesktopDesign from './components/desktopDesign'
+
 import './App.css'
+
 
 function App() {
   const [count, setCount] = useState(0)
