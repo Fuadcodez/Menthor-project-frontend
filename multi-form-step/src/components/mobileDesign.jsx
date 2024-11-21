@@ -56,12 +56,7 @@ export default function MobileDesign() {
   return (
     <section className='h-[90vh]' style={{ background: 'hsl(206, 94%, 87%)' }}>
       <div
-        className='h-[30vh]'
-        style={{
-          backgroundImage: `url(${mobileImg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        className='h-[30vh] mob-background'
       ></div>
       <div className='absolute top-0 left-0 w-[100%] h-[100%] px-5 pt-10 flex flex-col items-center'>
         <div className='flex gap-4 justify-center mb-8'>

@@ -58,12 +58,7 @@ export default function DesktopDesign() {
     <div className=' bg-[hsl(206,94%,87%)] min-h-full h-[100vh] w-full flex justify-center items-center'>
       <div className='bg-white flex p-4 w-[700px] h-[500px] rounded-lg '>
         <section
-          className='h-full rounded-lg flex pl-5  w-[40%] bg-no-repeat'
-          style={{
-            backgroundImage: `url(${mobileImg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+          className='h-full rounded-lg flex pl-5  w-[40%] bg-no-repeat background'
         >
           <div className='flex gap-4 mb-8 flex-col pt-8 '>
             <div className='flex items-center gap-4'>

@@ -6,3 +6,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+.background{
+  background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    background-size: cover;
+    background-position: 'center';
+}
+.mob-background{
+  background-image: url('./assets/images/bg-sidebar-mobile.svg');
+    background-size: cover;
+    background-position: 'center';
+}
