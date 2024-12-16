@@ -85,6 +85,7 @@ function App() {
   }
   return (
     <main className='bg-white py-10 px-6 rounded-lg rounded-br-[6rem] border flex flex-col gap-5 w-[400px] max-w-[500px]'>
+    
       <div>
       <form className='grid grid-cols-3'>
         <div className="flex flex-col justify-center gap-1 text-lg">
