@@ -2,7 +2,6 @@ import { useState } from 'react'
 import img1 from './assets/images/icon-arrow.svg'
 import './App.css'
 
-const date = [{key: 'dayError', value: '--'},{key: 'monthError', value: '--'},{key: 'yearError', value: '--'},] 
 function App() {
   const [day, setDay] = useState('')
   const [month, setMonth] = useState('')
@@ -58,7 +57,9 @@ function App() {
     })
      
     if (getAge){
-    
+      console.log(today.getFullYear())
+      console.log(birthdayTime.getFullYear())
+      console.log(today.getFullYear()- birthdayTime.getFullYear())
       const todayDate = new Date().getDate()
       const todayMonth = new Date().getMonth()
       const ageDate = new Date(diff);  
@@ -85,7 +86,7 @@ function App() {
   }
   return (
     <main className='bg-white py-10 px-6 rounded-lg rounded-br-[6rem] border flex flex-col gap-5 w-[400px] max-w-[500px]'>
-    
+
       <div>
       <form className='grid grid-cols-3'>
         <div className="flex flex-col justify-center gap-1 text-lg">
