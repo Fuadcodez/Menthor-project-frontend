@@ -1,5 +1,5 @@
-import React,{useState, useEffect, useRef} from 'react'
-import datas from '../../data.json'
+import {useState, useEffect, useRef} from 'react'
+import datas from '../data.json'
 import ReplyTemplate from './ReplyTemplate';
 import AddCommentTemplate from './AddCommentTemplate';
 import BottomOverlay from './BottomOverlay';
@@ -16,8 +16,8 @@ const Comment = () => {
 
  useEffect(()=>{
     const getData = async ()=>{
-        const data = await fetch("../../data.json")
-        const resp = await data.json()
+        // const data = await fetch("../data.json")
+        // const resp = await data.json()
         const comments=  localStorage.getItem("chats")? localStorage.getItem("chats") :localStorage.setItem("chats", JSON.stringify(datas))
         const allData = JSON.parse(comments)
         setData(allData)
@@ -72,12 +72,12 @@ const Comment = () => {
         setDeleteId(null)
         setOverlay(false)
  }
- const editComment = (id, reply)=>{
-    // const data = reply.content
-    // editRef.current.value = data
-    // setNewComment(data)
+//  const editComment = (id, reply)=>{
+//     // const data = reply.content
+//     // editRef.current.value = data
+//     // setNewComment(data)
     
- }
+//  }
  const saveEditComment = ()=>{
 //    const localData = JSON.parse(localStorage.getItem("chats"))
 //       const updatedeData = localData.comments.map((comment)=>{
@@ -115,7 +115,7 @@ const Comment = () => {
   return (
     <main className='bg-gray-400 h-full min-h-svh p-4 relative'>
         <div className='flex flex-col gap-5 mb-5'>
-            {data?.comments?.map((comment, index)=>(
+            {data?.comments?.map((comment, )=>(
             <div key={comment.id} className='flex flex-col gap-3'>
                 <UserComment comment={comment} setReply={setReply}/>
                 {replying === `${comment.user.username}` &&
@@ -127,9 +127,9 @@ const Comment = () => {
                         
                     </div>
                     <div className='flex flex-col gap-4 w-full'>
-                        {comment.replies.map((reply, index)=>(
+                        {comment.replies.map((reply,)=>(
                             <div key={reply.id}>
-                            <AddCommentTemplate  reply={reply} data={data} setReply={setReply} setOverlay={setOverlay} setDeleteId={setDeleteId} setEdit={setEdit} editComment={editComment}/>
+                            <AddCommentTemplate  reply={reply} data={data} setReply={setReply} setOverlay={setOverlay} setDeleteId={setDeleteId} setEdit={setEdit} />
                             {replying === `${reply.user.username}` && 
                             <ReplyTemplate data={data} newComment={newComment} setNewComment={setNewComment} postReply={postReply} comment={reply}/>
                         }
@@ -147,7 +147,7 @@ const Comment = () => {
          {overlay && <div className='bg-gray-700/60 bg-opacity-50 w-full h-full fixed top-0 left-0 z-[100] flex justify-center items-center'>
             <div className='bg-white w-[350px] p-4 rounded-lg'>
                 <h2 className='font-bold text-xl text-[hsl(212,24%,26%)] mb-3'>Delete comment</h2>
-                <p className='text-lg mb-3'>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
+                <p className='text-lg mb-3'>Are you sure you want to delete this comment? This will remove the comment and can&apos;t be undone.</p>
                 <div className='flex items-center uppercase gap-4'>
                     <button className='uppercase bg-[hsl(211,10%,45%)] text-white px-4 py-1 rounded-lg' onClick={()=>setOverlay(false)}>No cancel</button>
                     <button className='uppercase bg-[hsl(358,79%,66%)] text-white px-4 py-1 rounded-lg' onClick={ DeleteComment}>YES DELETE</button>
