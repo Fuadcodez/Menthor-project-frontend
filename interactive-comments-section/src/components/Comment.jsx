@@ -144,7 +144,7 @@ useEffect(() => {
                     </div>
                     <div className='flex flex-col gap-4 w-full'>
                         {comment.replies.map((reply,)=>(
-                            <div key={reply.id}>
+                            <div key={reply.id} className='flex flex-col gap-3'>
                             <AddCommentTemplate  reply={reply} data={data} setReply={setReply} setOverlay={setOverlay} setDeleteId={setDeleteId}  />
                             {replying === `${reply.user.username}` && 
                             <ReplyTemplate data={data} newComment={newComment} setNewComment={setNewComment} postReply={postReply} comment={reply}/>
