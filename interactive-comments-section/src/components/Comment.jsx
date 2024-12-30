@@ -10,20 +10,36 @@ const Comment = () => {
     const [newComment, setNewComment] = useState("")
     const [overlay, setOverlay] = useState(false)
     const [deleteId, setDeleteId] = useState(null)
-    const [edit, setEdit] = useState(null)
+    // const [edit, setEdit] = useState(null)
     const [dataUpdate, setDataUpdate] = useState([])
     const editRef = useRef(null)
 
- useEffect(()=>{
-    const getData = async ()=>{
-        // const data = await fetch("../data.json")
-        // const resp = await data.json()
-        const comments=  localStorage.getItem("chats")? localStorage.getItem("chats") :localStorage.setItem("chats", JSON.stringify(datas))
-        const allData = JSON.parse(comments)
-        setData(allData)
+useEffect(() => {
+  const getData = async () => {
+    try {
+      const storedData = localStorage.getItem("chats");
+      
+      if (storedData) {
+        setData(JSON.parse(storedData));
+      } else {
+        const response = await fetch("/data.json");
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const fetchedData = await response.json();
+        
+        localStorage.setItem("chats", JSON.stringify(fetchedData));
+        setData(fetchedData);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      localStorage.setItem("chats", JSON.stringify(datas));
+      setData(datas);
     }
-    getData()
- }, [dataUpdate])
+  };
+
+  getData();
+}, [dataUpdate]);
  const postReply = (id, replyTo,image,username)=>{
         const localData = JSON.parse(localStorage.getItem("chats"))
         const newReply = {
@@ -129,7 +145,7 @@ const Comment = () => {
                     <div className='flex flex-col gap-4 w-full'>
                         {comment.replies.map((reply,)=>(
                             <div key={reply.id}>
-                            <AddCommentTemplate  reply={reply} data={data} setReply={setReply} setOverlay={setOverlay} setDeleteId={setDeleteId} setEdit={setEdit} />
+                            <AddCommentTemplate  reply={reply} data={data} setReply={setReply} setOverlay={setOverlay} setDeleteId={setDeleteId}  />
                             {replying === `${reply.user.username}` && 
                             <ReplyTemplate data={data} newComment={newComment} setNewComment={setNewComment} postReply={postReply} comment={reply}/>
                         }
@@ -143,7 +159,7 @@ const Comment = () => {
                 </div>
             </div>))}
         </div> 
-         <BottomOverlay data={data} edit={edit} editRef={editRef} setNewComment={setNewComment} comment={newComment} sendComment={sendComment} saveEditComment={saveEditComment}/>
+         <BottomOverlay data={data}  editRef={editRef} setNewComment={setNewComment} comment={newComment} sendComment={sendComment} saveEditComment={saveEditComment}/>
          {overlay && <div className='bg-gray-700/60 bg-opacity-50 w-full h-full fixed top-0 left-0 z-[100] flex justify-center items-center'>
             <div className='bg-white w-[350px] p-4 rounded-lg'>
                 <h2 className='font-bold text-xl text-[hsl(212,24%,26%)] mb-3'>Delete comment</h2>

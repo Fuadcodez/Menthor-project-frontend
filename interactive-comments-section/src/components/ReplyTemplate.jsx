@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 
 const ReplyTemplate = ({data, newComment, setNewComment, postReply, comment}) => {
   return (

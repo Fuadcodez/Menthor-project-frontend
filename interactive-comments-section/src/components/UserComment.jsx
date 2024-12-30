@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 
 import { FaReply } from 'react-icons/fa6'
 import { HiMiniMinusSmall } from 'react-icons/hi2'

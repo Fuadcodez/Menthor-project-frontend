@@ -1,6 +1,6 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 
-const BottomOverlay = ({data, edit, editRef, sendComment, setNewComment, newComment, saveEditComment}) => {
+const BottomOverlay = ({data,  editRef, sendComment, setNewComment, newComment, }) => {
   const image = data?.currentUser?.image?.png
   const username = data?.currentUser?.username
   return (
@@ -10,7 +10,7 @@ const BottomOverlay = ({data, edit, editRef, sendComment, setNewComment, newComm
         </div>
         <div className='flex justify-between items-center'>
             <img src={data?.currentUser?.image?.png} alt={`${data?.currentUser?.username}-image`}  className='w-10'/>
-            {edit? <button type='button' className=' py-3 px-5 bg-blue-900 text-white rounded-lg' onClick={()=>saveEditComment()}>UPDATE</button>: <button type='button' className=' py-3 px-5 bg-blue-900 text-white rounded-lg' onClick={()=>sendComment(image, username)}> SEND</button>}
+          <button type='button' className=' py-3 px-5 bg-blue-900 text-white rounded-lg' onClick={()=>sendComment(image, username)}> SEND</button>
         </div>
     </div>
   )
