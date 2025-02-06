@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+.background{
+  background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    background-size: cover;
+    background-position: 'center';
+}
+.mob-background{
+  background-image: url('./assets/images/bg-sidebar-mobile.svg');
+    background-size: cover;
+    background-position: 'center';
+}
