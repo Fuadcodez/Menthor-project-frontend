@@ -9,10 +9,12 @@ import {
   SelectRoot,
   SelectTrigger,
   SelectValueText,
-} from "../components/ui/select"
-import AllCountries from '../components/AllCountries';
+} from "@/src/components/ui/select"
+
+import AllCountries from '@/src/components/AllCountries';
 import { ClipLoader, PulseLoader } from "react-spinners";
-import useCountryStore from '../store/countryStore';
+import useCountryStore from '@/src/store/countryStore';
+
 const Countries = () => {
   const [loading, setLoading] = useState<boolean>(false)
   const countries = useCountryStore(state=>state.countries)
