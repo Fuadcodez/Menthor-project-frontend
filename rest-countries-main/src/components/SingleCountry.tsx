@@ -14,10 +14,12 @@ const SingleCountry = ({country}: {country: Country}) => {
   const borders = country?.borders
   const domain = country?.topLevelDomain[0]
   return (
-    <div className='flex flex-col justify-center gap-10'>
+    <div className='flex flex-col gap-10 lg:flex-row lg:items-center max-lg:justify-center lg:gap-20'>
       <div className=''>
         <img src={flag} alt="National flag" className='object-cover w-full h-full rounded-t-md'/>
       </div>
+      <div className='flex flex-col gap-10'>
+        <div className='flex flex-col gap-10 lg:flex-row lg:items-center'>
       <div className='flex flex-col justify-center gap-3'>
         <h1 className='mb-4 text-3xl font-bold'>{name}</h1>
         <h2>Native Name: {nativeName}</h2>
@@ -41,11 +43,13 @@ const SingleCountry = ({country}: {country: Country}) => {
         </div>
         </div>
       </div>
-      <div className='flex flex-col justify-center gap-3'>
-        <h2 className='text-xl font-semibold'>Border Countries:</h2>
+      </div>
+      <div className='flex flex-col gap-3 max-lg:justify-center lg:flex-row lg:gap-10'>
+        <h2 className='text-xl  lg:text-[1rem] lg:w-[40%]'>Border Countries:</h2>
         <div className='flex flex-wrap items-center gap-2'>
-        {borders?.map((border) => <div key={border} className='px-12 py-2 text-[hsl(200,15%,8%)] dark:text-[hsl(0,0%,100%)] dark:bg-[hsl(209,23%,22%)] bg-[hsl(0,0%,100%)] rounded-md ' >{border}</div>)}
+        {borders?.map((border) => <button key={border} className='px-12 py-2 text-[hsl(200,15%,8%)] dark:text-[hsl(0,0%,100%)] dark:bg-[hsl(209,23%,22%)] bg-[hsl(0,0%,100%)] rounded-md shadow-md shadow-black/50' >{border}</button>)}
         </div>
+      </div>
       </div>
     </div>
   )

@@ -3,6 +3,8 @@ import { Country } from '../app/countries/country';
 interface countryStore {
     countries: Country[];
     setCountries: (country: Country[]) => void; 
+    filterCountries: Country[];
+    setFilterCountries: (country: Country[]) => void; 
     singleCountry: Country[]
     setSingleCountry: (country: Country[]) => void
     
@@ -11,6 +13,8 @@ interface countryStore {
  const useCountryStore = create<countryStore>((set) =>({
     countries: [],
     setCountries: (country:Country[]) => set({countries: country}),
+    filterCountries: [],
+    setFilterCountries: (country:Country[]) => set({countries: country}),
     singleCountry: [],
     setSingleCountry: (country:Country[]) => set({singleCountry: country}),
     

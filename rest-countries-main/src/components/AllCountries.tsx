@@ -16,7 +16,7 @@ const AllCountries = ({country}:{country:Country}) => {
     <div className='flex flex-col justify-center gap-3 pl-7 py-7'>
     <h2 className='text-xl font-bold'>{name}</h2>
     <div className='flex flex-col gap-1 text-lg'>
-    <p>{`Population: ${population}`}</p>
+    <p>{`Population: ${population?.toLocaleString()}`}</p>
     <p>{`Region: ${region}`}</p>
     <p>{`Capital: ${capital}`}</p>
 
