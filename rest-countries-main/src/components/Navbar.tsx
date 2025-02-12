@@ -1,5 +1,5 @@
 import React from 'react'
-import ThemeToggle from './ThemeToggle'
+
 import ThemeSwitcher from './ThemeToggle';
 import "../app/globals.css";
 const Navbar = () => {

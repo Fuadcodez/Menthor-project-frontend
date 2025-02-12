@@ -1,7 +1,6 @@
 "use client"
-import Image from "next/image";
+
 import Countries from "./countries/page";
-import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (

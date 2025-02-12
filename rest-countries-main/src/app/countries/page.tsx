@@ -5,14 +5,13 @@ import { createListCollection } from "@chakra-ui/react"
 import {
   SelectContent,
   SelectItem,
-  SelectLabel,
   SelectRoot,
   SelectTrigger,
   SelectValueText,
 } from "@/src/components/ui/select"
 
 import AllCountries from '@/src/components/AllCountries';
-import { ClipLoader, PulseLoader } from "react-spinners";
+import { ClipLoader, } from "react-spinners";
 import useCountryStore from '@/src/store/countryStore';
 import { Country } from './country';
 
@@ -28,7 +27,7 @@ const Countries = () => {
    const frameworks = createListCollection({
     items: category
   })
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const w =e.target.value
      setInput(w)
       const trimInput = w.trim().toLowerCase()
@@ -64,7 +63,7 @@ const Countries = () => {
       }
     }
     call()
-  },[])
+  },[setCountries])
   return (
     <div className='flex flex-col gap-8 px-5 py-4'>
       <div className='flex flex-col gap-10 md:flex-row md:justify-between md:items-center'>

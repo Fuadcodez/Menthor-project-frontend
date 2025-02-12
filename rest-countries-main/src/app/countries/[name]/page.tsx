@@ -6,8 +6,8 @@ import { ClipLoader } from 'react-spinners'
 import SingleCountry from '@/src/components/SingleCountry'
 import Link from 'next/link'
 import { MdKeyboardBackspace } from "react-icons/md";
-const page =  ({params}: { params: Promise<{ name: string }> }) => {
-  const [loading, setLoading] = useState(false)
+const Page =  ({params}: { params: Promise<{ name: string }> }) => {
+  const [loading, setLoading] = useState<boolean>(false)
   const singleCountry = useCountryStore(state=>state.singleCountry)
   const setSingleCountry = useCountryStore(state=>state.setSingleCountry)
       const { name } = use(params);
@@ -32,7 +32,7 @@ const page =  ({params}: { params: Promise<{ name: string }> }) => {
     }
     call()
     
-  }, [])
+  }, [setSingleCountry])
 
   return (
     <div className='dark:bg-[hsl(207,26%,17%)] bg-[hsl(0,0%,90%)] dark:text-[hsl(0,0%,100%)] text-[hsl(200,15%,8%)] relative min-h-[100svh] overflow-hidden p-10 '>
@@ -51,4 +51,4 @@ const page =  ({params}: { params: Promise<{ name: string }> }) => {
   )
 }
 
-export default page
+export default Page

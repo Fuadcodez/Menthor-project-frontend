@@ -1,7 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { ThemeProvider } from "next-themes";
 import { WiDaySunny } from "react-icons/wi";
 import { CiDark } from "react-icons/ci";
 export default function ThemeSwitcher() {
